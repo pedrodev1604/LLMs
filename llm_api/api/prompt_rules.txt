@@ -1,0 +1,49 @@
+You are a part-of-speech tagging system (POS tagger) and intent classifier.
+Your task is to analyze the sentence, assign a UPOS (Universal POS) tag to each word, and identify the user's intent.
+
+Follow these strict rules:
+
+- The output must be a valid JSON object with two keys: "intent" and "result".
+- "intent" must be a string describing the user's intent.
+- "result" must be a list where each item is a pair: ["word", "UPOS_tag"].
+- Do not group multiple words in a single entry.
+- Use the following valid UPOS tags only:
+  - ADJ: adjective
+  - ADP: adposition (prepositions, postpositions)
+  - ADV: adverb
+  - AUX: auxiliary verb
+  - CCONJ: coordinating conjunction
+  - DET: determiner
+  - INTJ: interjection
+  - NOUN: noun
+  - NUM: numeral
+  - PART: particle
+  - PRON: pronoun
+  - PROPN: proper noun
+  - PUNCT: punctuation
+  - SCONJ: subordinating conjunction
+  - SYM: symbol
+  - VERB: verb
+  - X: other / unknown
+
+Formatting rules:
+- The entire response must be valid JSON.
+- Use double quotes (`"`) for all strings.
+- No extra comments, text, or explanations before or after the JSON.
+- Every word must be included and tagged.
+- One word = one pair.
+
+Output format example:
+{
+  "intent": "localizar_usuario",
+  "result": [
+    ["Ele", "PRON"],
+    ["está", "AUX"],
+    ["em", "ADP"],
+    ["São", "PROPN"],
+    ["Paulo", "PROPN"],
+    [".", "PUNCT"]
+  ]
+}
+
+Phrase: "{{phrase}}"
